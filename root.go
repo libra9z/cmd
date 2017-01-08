@@ -15,6 +15,7 @@ var(
 	Token			string
 	Debug			bool
 	DebugAddr		string
+	RecordAddr		string
 	HttpAddr		string
 	ZipkinAddr		string
 	AppdashAddr		string
@@ -31,6 +32,7 @@ func init() {
 	RootCmd.PersistentFlags().BoolVar(&Debug,"debug", false, "enable debug mode true or false")
 	RootCmd.PersistentFlags().StringVar(&DebugAddr,"debug.addr", ":8080", "Debug and metrics listen address")
 	RootCmd.PersistentFlags().StringVar(&HttpAddr,"http.addr", ":8081", "HTTP listen address")
+	RootCmd.PersistentFlags().StringVar(&RecordAddr,"record.addr", "", "zipkin recorder address")
 	RootCmd.PersistentFlags().StringVar(&ZipkinAddr,"zipkin.addr", "", "Enable Zipkin tracing via a Kafka server host:port")
 	RootCmd.PersistentFlags().StringVar(&AppdashAddr,"appdash.addr", "", "Enable Appdash tracing via an Appdash server host:port")
 	RootCmd.PersistentFlags().StringVar(&LightstepToken,"lightstep.token", "", "Enable LightStep tracing via a LightStep access token")
