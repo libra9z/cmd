@@ -30,7 +30,7 @@ func init() {
 	RootCmd.PersistentFlags().StringVar(&Token, "token", "", "config consul acl token.")
 
 	RootCmd.PersistentFlags().BoolVar(&Debug,"debug", false, "enable debug mode true or false")
-	RootCmd.PersistentFlags().StringVar(&DebugAddr,"debug.addr", ":8080", "Debug and metrics listen address")
+	RootCmd.PersistentFlags().StringVar(&DebugAddr,"debug.addr", ":18080", "Debug and metrics listen address")
 	//RootCmd.PersistentFlags().StringVar(&HttpAddr,"http.addr", ":8081", "HTTP listen address")
 	//RootCmd.PersistentFlags().StringVar(&RecordAddr,"collect.addr", "", "zipkin collect address")
 	RootCmd.PersistentFlags().StringVar(&ZipkinAddr,"zipkin.addr", "", "Enable Zipkin tracing via a Kafka server host:port")
