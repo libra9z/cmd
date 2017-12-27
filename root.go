@@ -37,7 +37,7 @@ func init() {
 	RootCmd.PersistentFlags().StringVar(&AppdashAddr,"appdash.addr", "", "Enable Appdash tracing via an Appdash server host:port")
 	RootCmd.PersistentFlags().StringVar(&LightstepToken,"lightstep.token", "", "Enable LightStep tracing via a LightStep access token")
 
-	RootCmd.AddCommand(versionCmd)
+	//RootCmd.AddCommand(versionCmd)
 }
 
 
