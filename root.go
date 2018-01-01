@@ -13,6 +13,7 @@ var(
 	Address			string
 	Consul			string
 	Token			string
+	Workerid		int
 	Debug			bool
 	DebugAddr		string
 	//RecordAddr		string
@@ -29,6 +30,7 @@ func init() {
 	RootCmd.PersistentFlags().StringVar(&Consul, "consul", "", "config consul address format(ip:port).")
 	RootCmd.PersistentFlags().StringVar(&Token, "token", "", "config consul acl token.")
 
+	RootCmd.PersistentFlags().IntVar(&Workerid, "worker", 1, "config worker id for distribute .")
 	RootCmd.PersistentFlags().BoolVar(&Debug,"debug", false, "enable debug mode true or false")
 	RootCmd.PersistentFlags().StringVar(&DebugAddr,"debug.addr", ":18080", "Debug and metrics listen address")
 	//RootCmd.PersistentFlags().StringVar(&HttpAddr,"http.addr", ":8081", "HTTP listen address")
