@@ -13,11 +13,10 @@ var(
 	Address			string
 	Consul			string
 	Token			string
+	ServiceConf		string
 	Workerid		int
 	Debug			bool
 	DebugAddr		string
-	//RecordAddr		string
-	//HttpAddr		string
 	ZipkinAddr		string
 	AppdashAddr		string
 	LightstepToken	string
@@ -29,6 +28,7 @@ func init() {
 	RootCmd.PersistentFlags().StringVar(&Address, "addr", "", "config this service address format(ip:port).")
 	RootCmd.PersistentFlags().StringVar(&Consul, "consul", "", "config consul address format(ip:port).")
 	RootCmd.PersistentFlags().StringVar(&Token, "token", "", "config consul acl token.")
+	RootCmd.PersistentFlags().StringVar(&ServiceConf, "file", "", "service config file.")
 
 	RootCmd.PersistentFlags().IntVar(&Workerid, "worker", 1, "config worker id for distribute .")
 	RootCmd.PersistentFlags().BoolVar(&Debug,"debug", false, "enable debug mode true or false")
