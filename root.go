@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/spf13/cobra"
 	"os"
 	"path/filepath"
-	"github.com/spf13/cobra"
 )
 
 var RootCmd *cobra.Command
@@ -16,6 +16,8 @@ var(
 	ServiceConf		string
 	Workerid		int
 	Debug			bool
+	IsChild			bool
+	SocketOrder		string
 	DebugAddr		string
 	ZipkinAddr		string
 	AppdashAddr		string
@@ -38,6 +40,9 @@ func init() {
 	RootCmd.PersistentFlags().StringVar(&ZipkinAddr,"zipkin.addr", "", "Enable Zipkin tracing via a Kafka server host:port")
 	RootCmd.PersistentFlags().StringVar(&AppdashAddr,"appdash.addr", "", "Enable Appdash tracing via an Appdash server host:port")
 	RootCmd.PersistentFlags().StringVar(&LightstepToken,"lightstep.token", "", "Enable LightStep tracing via a LightStep access token")
+
+	RootCmd.PersistentFlags().BoolVar(&IsChild, "graceful", false, "listen on open fd (after forking)")
+	RootCmd.PersistentFlags().StringVar(&SocketOrder, "socketorder", "", "previous initialization order - used when more than one listener was started")
 
 	//RootCmd.AddCommand(versionCmd)
 }
