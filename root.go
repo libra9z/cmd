@@ -11,6 +11,8 @@ var RootCmd *cobra.Command
 
 var(
 	Address			string
+	Http			string
+	Https			string
 	Consul			string
 	Token			string
 	ServiceConf		string
@@ -28,6 +30,8 @@ func init() {
 	_, f := filepath.Split(os.Args[0])
 	RootCmd = &cobra.Command{Use:f}
 	RootCmd.PersistentFlags().StringVar(&Address, "addr", "", "config this service address format(ip:port).")
+	RootCmd.PersistentFlags().StringVar(&Address, "http", "", "config this service http address format(ip:port).")
+	RootCmd.PersistentFlags().StringVar(&Address, "https", "", "config this service https address format(ip:port).")
 	RootCmd.PersistentFlags().StringVar(&Consul, "consul", "", "config consul address format(ip:port).")
 	RootCmd.PersistentFlags().StringVar(&Token, "token", "", "config consul acl token.")
 	RootCmd.PersistentFlags().StringVar(&ServiceConf, "file", "", "service config file.")
