@@ -22,6 +22,7 @@ var (
 	SocketOrder    string
 	DebugAddr      string
 	ZipkinAddr     string
+	KafkaAddr      string
 	AppdashAddr    string
 	LightstepToken string
 )
@@ -42,6 +43,7 @@ func init() {
 	//RootCmd.PersistentFlags().StringVar(&HttpAddr,"http.addr", ":8081", "HTTP listen address")
 	//RootCmd.PersistentFlags().StringVar(&RecordAddr,"collect.addr", "", "zipkin collect address")
 	RootCmd.PersistentFlags().StringVar(&ZipkinAddr, "zipkin.addr", "", "Enable Zipkin tracing via a Kafka server host:port")
+	RootCmd.PersistentFlags().StringVar(&KafkaAddr, "kafka.addr", "", "Enable Kafka server host:port")
 	RootCmd.PersistentFlags().StringVar(&AppdashAddr, "appdash.addr", "", "Enable Appdash tracing via an Appdash server host:port")
 	RootCmd.PersistentFlags().StringVar(&LightstepToken, "lightstep.token", "", "Enable LightStep tracing via a LightStep access token")
 
