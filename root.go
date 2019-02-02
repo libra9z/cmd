@@ -16,6 +16,8 @@ var (
 	Consul         string
 	Token          string
 	ServiceConf    string
+	Sdt			   string
+	Sda			   string
 	Workerid       int
 	Debug          bool
 	IsChild        bool
@@ -36,6 +38,8 @@ func init() {
 	RootCmd.PersistentFlags().StringVar(&Consul, "consul", "", "config consul address format(ip:port).")
 	RootCmd.PersistentFlags().StringVar(&Token, "token", "", "config consul acl token.")
 	RootCmd.PersistentFlags().StringVar(&ServiceConf, "file", "", "service config file.")
+	RootCmd.PersistentFlags().StringVar(&Sda, "sda", "", "service discovery address.")
+	RootCmd.PersistentFlags().StringVar(&Sdt, "sdt", "", "service discovery type,can by cansul,etcd.")
 
 	RootCmd.PersistentFlags().IntVar(&Workerid, "worker", 1, "config worker id for distribute .")
 	RootCmd.PersistentFlags().BoolVar(&Debug, "debug", false, "enable debug mode true or false")
