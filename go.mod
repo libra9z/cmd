@@ -1,4 +1,4 @@
-module platform/common/cmd
+module github.com/libra9z/cmd
 
 require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
